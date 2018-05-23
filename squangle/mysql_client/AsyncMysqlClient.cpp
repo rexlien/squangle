@@ -21,10 +21,11 @@
 #include <folly/portability/GFlags.h>
 #include <folly/ssl/Init.h>
 
+#include <my_global.h>
 #include <mysql.h>
 
 #include <fcntl.h>
-#include <unistd.h>
+//#include <unistd.h>
 
 DECLARE_int64(mysql_mysql_timeout_micros);
 

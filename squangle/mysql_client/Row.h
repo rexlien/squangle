@@ -19,10 +19,13 @@
 #ifndef COMMON_ASYNC_MYSQL_ROW_H
 #define COMMON_ASYNC_MYSQL_ROW_H
 
+#include <folly/Portability.h>
+
 #include <unordered_map>
 #include <vector>
 
 #include <boost/iterator/iterator_facade.hpp>
+#include <my_global.h>
 #include <mysql.h>
 #include <chrono>
 

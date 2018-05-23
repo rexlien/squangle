@@ -2,6 +2,8 @@
 
 #pragma once
 
+
+#include <my_global.h>
 #include <mysql.h>
 #include <wangle/client/ssl/SSLSession.h>
 

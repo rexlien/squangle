@@ -18,6 +18,7 @@
 
 #include <vector>
 
+#include <my_global.h>
 #include <mysql.h>
 #include <mysqld_error.h>
 #include <chrono>

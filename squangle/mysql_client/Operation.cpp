@@ -490,7 +490,7 @@ void ConnectOperation::socketActionable() {
   auto& handler = conn()->client()->getMysqlHandler();
   auto status =
       handler.connect(conn()->mysql(), error, conn_options_, conn_key_, flags_);
-  auto fd = mysql_get_file_descriptor(conn()->mysql());
+  auto fd = folly::libeventFdToFd(mysql_get_file_descriptor(conn()->mysql()));
   if (status == MysqlHandler::DONE) {
     if (error == 0) {
       if (fd <= 0) {

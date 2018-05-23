@@ -235,29 +235,31 @@ std::chrono::system_clock::time_point parseDateTime(
   switch (date_type) {
     case MYSQL_TYPE_TIMESTAMP:
     case MYSQL_TYPE_DATETIME:
-      static re2::RE2 timestamp_pattern(
-          "(\\d{4})-(\\d{2})-(\\d{2}) "
-          "(\\d{2}):(\\d{2}):(\\d{2})(?:\\.(\\d{1,6}))?");
-      parse_succeeded = re2::RE2::FullMatch(
-          re2_datetime,
-          timestamp_pattern,
-          &time_tm.tm_year,
-          &time_tm.tm_mon,
-          &time_tm.tm_mday,
-          &time_tm.tm_hour,
-          &time_tm.tm_min,
-          &time_tm.tm_sec,
-          &microseconds_str);
-      break;
+    {  static re2::RE2 timestamp_pattern(
+        "(\\d{4})-(\\d{2})-(\\d{2}) "
+        "(\\d{2}):(\\d{2}):(\\d{2})(?:\\.(\\d{1,6}))?");
+        parse_succeeded = re2::RE2::FullMatch(
+            re2_datetime,
+            timestamp_pattern,
+            &time_tm.tm_year,
+            &time_tm.tm_mon,
+            &time_tm.tm_mday,
+            &time_tm.tm_hour,
+            &time_tm.tm_min,
+            &time_tm.tm_sec,
+            &microseconds_str);
+        break;
+    }
     case MYSQL_TYPE_DATE:
-      static re2::RE2 date_pattern("(\\d{4})-(\\d{2})-(\\d{2})");
-      parse_succeeded = re2::RE2::FullMatch(
-          re2_datetime,
-          date_pattern,
-          &time_tm.tm_year,
-          &time_tm.tm_mon,
-          &time_tm.tm_mday);
-      break;
+    {  static re2::RE2 date_pattern("(\\d{4})-(\\d{2})-(\\d{2})");
+        parse_succeeded = re2::RE2::FullMatch(
+            re2_datetime,
+            date_pattern,
+            &time_tm.tm_year,
+            &time_tm.tm_mon,
+            &time_tm.tm_mday);
+        break;
+    }
     default:
       break;
   };

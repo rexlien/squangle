@@ -37,6 +37,8 @@
 #ifndef COMMON_ASYNC_MYSQL_OPERATION_H
 #define COMMON_ASYNC_MYSQL_OPERATION_H
 
+#include <folly/Portability.h>
+#include <my_global.h>
 #include <mysql.h>
 #include <condition_variable>
 #include <memory>

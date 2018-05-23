@@ -205,7 +205,7 @@ folly::Optional<StreamedQueryResult> MultiQueryStreamHandler::nextQuery() {
   if (state_ == State::RunQuery) {
     start();
   }
-
+  
   // Runs in User thread
   operation_->connection()->wait();
   DCHECK(operation_->isPaused() || operation_->done());

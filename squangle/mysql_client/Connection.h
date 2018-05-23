@@ -11,6 +11,7 @@
 #define COMMON_ASYNC_CONNECTION_H
 
 #include <folly/String.h>
+#include <my_global.h>
 #include <mysql.h>
 #include <chrono>
 

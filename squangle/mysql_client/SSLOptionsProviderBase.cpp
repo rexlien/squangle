@@ -1,5 +1,6 @@
 // Copyright 2004-present Facebook.  All rights reserved.
 
+#include <folly/Portability.h>
 #include "squangle/mysql_client/SSLOptionsProviderBase.h"
 #include <folly/io/async/SSLContext.h>
 
